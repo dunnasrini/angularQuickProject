@@ -7,6 +7,7 @@
             globalUices.activeHome();
             //added some information for commit
             //infor updated in the server
+            //added locally one
         };
 
         init();
