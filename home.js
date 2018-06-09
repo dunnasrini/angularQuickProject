@@ -4,10 +4,12 @@
         
         var init = function () {
             
-            globalUiServices.activeHome();
+            globalUices.activeHome();
+            //added some information for commit
         };
 
         init();
+        
     });
  
 }(angular.module("MethodHub.home")));
