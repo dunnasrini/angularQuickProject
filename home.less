@@ -1,0 +1,216 @@
+/* Less file for home*/
+
+@smallerThanIPad:   ~"(max-width:1023px)";
+
+
+#home {
+    .news {
+        img {
+            margin-bottom: 20px;
+            opacity: .6;
+            transition: 0.1s linear all;
+        }
+
+        img:hover {
+            opacity: 1;
+        }
+
+        p {
+            position: relative;
+            display: block;
+        }
+    }
+
+    .welcomeBanner {
+        background-color: @ibmBlue;
+        color: white;
+        padding: 35px;
+        font-weight: 100;
+        overflow: hidden;
+        z-index: 0;
+
+        .bgIcon {
+            position: absolute;
+            display: block;
+            opacity: 0.2;
+            z-index: -1;
+
+            @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+            @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+            @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } } 
+
+            @-moz-keyframes negativeSpin { 100% { -moz-transform: rotate(-360deg); } }
+            @-webkit-keyframes negativeSpin { 100% { -webkit-transform: rotate(-360deg); } }
+            @keyframes negativeSpin { 100% { -webkit-transform: rotate(-360deg); transform:rotate(-360deg); } } 
+
+            transform-origin: 55.84% 38.05%;   
+
+            @bgSpinDuration: 45s;    
+
+            &.bgIconTopRight {
+                font-size: 400px;
+                top: -68px;
+                right: -25px;      
+    
+                -webkit-animation:spin @bgSpinDuration linear infinite;
+                -moz-animation:spin @bgSpinDuration linear infinite;
+                animation:spin @bgSpinDuration linear infinite;             
+            }
+
+            &.bgIconBottomLeft {
+                font-size: 400px;
+                bottom: -233px;
+                left: -20px;    
+
+                -webkit-animation:negativeSpin @bgSpinDuration linear infinite;
+                -moz-animation:negativeSpin @bgSpinDuration linear infinite;
+                animation:negativeSpin @bgSpinDuration linear infinite;              
+
+                @media @smallerThanIPad {
+                    display: none;
+                }
+            }
+        }
+
+        h1 {
+            font-weight: 100;
+            font-size: 60px;
+            font-weight: 100;
+            text-align: center;
+
+            @media @smallerThanIPad {
+                font-size: 30px;
+            }
+        }
+
+        h2 {
+            color: white;
+            text-align: center;
+            font-weight: 100;
+            margin-bottom: 30px;
+            font-size: 24px;
+
+            @media @smallerThanIPad {
+                font-size: 18px;
+            }
+        }
+
+        hr {
+            margin: 30px auto 20px auto;
+            width: 50%;
+
+            @media @smallerThanIPad {
+                margin: 20px auto;
+            }
+        }
+
+        .bannerNavEntry {
+
+            &.pointer {
+                cursor: pointer;
+                margin-bottom: 15px;
+            }
+
+            &:hover {
+                .bannerIcon, h3 {
+                    text-shadow: 2px 2px 5px rgba(0, 0, 0, .3);   
+                }    
+
+                .bannerIcon {
+                    top: -10px;
+                }
+            }
+            
+            .bannerIcon {
+                display: block;
+                font-size: 90px;
+                font-weight: 100;
+                text-align: center;
+                margin-bottom: 20px;
+                margin-top: 20px;
+                -webkit-transition: top 0.2s; /* Safari */
+                transition: top 0.2s;
+                
+                .path1:before {
+                    color: white;
+                }
+
+                .path2:before {
+                    color: @ibmBlue;
+                    text-shadow: none;
+                }
+
+                @media @smallerThanIPad {
+                    font-size: 60px;
+                }
+            }   
+
+            h3 {
+                color: white;
+                text-align: center;
+                margin-top: 20px;
+                font-size: 24px;
+                line-height: 24px;
+                font-weight: 100;
+
+                @media @smallerThanIPad {
+                    font-size: 16px;
+                }
+            }
+
+            hr {
+                margin: 25px auto;
+                width: 65%;
+            }
+
+            p {
+                text-align: center;
+                font-weight: 100;
+            }
+        } 
+    }
+
+    .blueTile {
+        a {
+            color: white;
+        }
+    }
+
+    .newsTitle {
+        width: 100%;
+        padding-left: 80px;
+        display: block;
+    }
+
+    .newsDate {
+        position: absolute;
+        width: 75px;
+        top: 0;
+        left: 0;
+    }
+
+    .newsList {
+
+        padding-left: 0px;
+
+        li {
+            margin-bottom: 5px;
+            list-style-type: none;
+
+            .newsListBullet {
+                cursor: pointer;
+                color: @ibmBlue;
+            }
+
+            div {
+                margin-left: 5px;
+                padding-left: 10px;
+                border-left: 1px rgba(0,0,0,.3) solid;
+
+                p {
+                    text-align: justify;
+                }
+            }
+        }
+    }
+}
